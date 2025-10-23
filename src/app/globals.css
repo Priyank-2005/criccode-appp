@@ -1,26 +1,28 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Apply the Inter font and a light background for modern look */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
+  background-color: #f0f3f5; /* Light subtle background */
+  color: #171717;
+}
+
+/* Ensure Navbar is always on top for a sticky effect */
+.sticky-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* Custom utility for form icons/indicators */
+.form-win {
+  @apply bg-green-100 text-green-700 border-green-300;
+}
+.form-loss {
+  @apply bg-red-100 text-red-700 border-red-300;
+}
+.form-nr {
+  @apply bg-gray-100 text-gray-500 border-gray-300;
 }
